@@ -1,1 +1,1 @@
-Jesse and Jeff attended the Linux Foundation Open Networking Summit. Jeff gave a talk about SDN as an evolutionary pressure on network management systems. Video should be [here](https://www.youtube.com/user/OpenNetSummit) when it becomes available.
+* Jesse and Jeff attended the Linux Foundation Open Networking Summit. Jeff gave a talk about SDN as an evolutionary pressure on network management systems. Video should be [here](https://www.youtube.com/user/OpenNetSummit) when it becomes available.
