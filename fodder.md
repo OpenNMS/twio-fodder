@@ -1,6 +1,14 @@
-* write about MHuot's Dev-Jam Attendee document
-* Update Vagrant boxes
-** OpenNMS Horizon 17.1.1 based on [CentOS 7](https://atlas.hashicorp.com/opennms/boxes/vagrant-opennms-centos-stable)
-** OpenNMS Horizon 17.1.1 based on [Ubuntu 14.04.4 LTS](https://atlas.hashicorp.com/opennms/boxes/vagrant-opennms-ubuntu-stable)
-** OpenNMS Horizon 18 snapshot 20160325 build 368 based on [Ubuntu 14.04.4 LTS](https://atlas.hashicorp.com/opennms/boxes/vagrant-opennms-ubuntu-develop)
-** OpenNMS Horizon 17.1.1 education based on [CentOS 7](https://atlas.hashicorp.com/opennms/boxes/opennms-edu-centos-stable/)
+* Working on creating User documentation for Business Service Documentation HZN-688
+* Got contacted by SMSEagle SMS gateway manufacturer to get OpenNMS support for their devices: NMS-8306
+* General Assembly invitation sent out for 22nd April 2016
+
+* Agenda:
+  * Information from the board
+  * Financial report 2015 (if possible)
+  * Election of a treasurer
+  * DevJam 2016 
+  * OUCE 2016
+  * Communication
+  * Administration OFE
+  * Divers
+
