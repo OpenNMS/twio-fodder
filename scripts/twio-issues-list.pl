@@ -5,7 +5,7 @@ use LWP::UserAgent;
 use XML::LibXML;
 
 # Change this if the Jira URL changes
-my $jiraBaseUrl = "http://issues.opennms.org";
+my $jiraBaseUrl = "https://issues.opennms.org";
 
 my $jiraLoginUrl = "${jiraBaseUrl}/login.jsp";
 my $jiraSearchUrl = "${jiraBaseUrl}/sr/jira.issueviews:searchrequest-xml/13408/SearchRequest-13408.xml?tempMax=1000";
