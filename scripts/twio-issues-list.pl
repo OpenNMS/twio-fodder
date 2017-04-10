@@ -7,8 +7,11 @@ use XML::LibXML;
 # Change this if the Jira URL changes
 my $jiraBaseUrl = "https://issues.opennms.org";
 
+my $filter = 13408;
+#my $filter = 13510; # 2 weeks
+
 my $jiraLoginUrl = "${jiraBaseUrl}/login.jsp";
-my $jiraSearchUrl = "${jiraBaseUrl}/sr/jira.issueviews:searchrequest-xml/13408/SearchRequest-13408.xml?tempMax=1000";
+my $jiraSearchUrl = "${jiraBaseUrl}/sr/jira.issueviews:searchrequest-xml/${filter}/SearchRequest-${filter}.xml?tempMax=1000";
 
 # Read our login credentials
 my $creds = {};
