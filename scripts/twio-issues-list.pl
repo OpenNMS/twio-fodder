@@ -8,6 +8,7 @@ use XML::LibXML;
 my $jiraBaseUrl = "https://issues.opennms.org";
 
 my $filter = 13408;
+#my $filter = 13522; # 8 days
 #my $filter = 13510; # 2 weeks
 
 my $jiraLoginUrl = "${jiraBaseUrl}/login.jsp";
@@ -25,7 +26,7 @@ ReadMode(0);        # back to normal
 # Construct the user-agent HTTP client
 my $ua = LWP::UserAgent->new( requests_redirectable => [ "GET", "HEAD", "POST" ] );
 $ua->cookie_jar( {} );
-$ua->timeout(10);
+$ua->timeout(30);
  
 # Do the login POST to Jira
 my $response = $ua->post("${jiraLoginUrl}", $creds);
