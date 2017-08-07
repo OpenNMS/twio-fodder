@@ -7,7 +7,7 @@ use XML::LibXML;
 # Change this if the Jira URL changes
 my $jiraBaseUrl = "https://issues.opennms.org";
 
-my $filter = 13408; # 7 days
+my $filter = 13303; # 7 days
 #my $filter = 13522; # 8 days
 #my $filter = 13600; # 10 days
 #my $filter = 13510; # 2 weeks
