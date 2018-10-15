@@ -9,8 +9,8 @@ use File::Slurp;
 my $jiraHost = "issues.opennms.org";
 my $jiraBaseUrl = "https://${jiraHost}";
 
-my $filter = 13303; # 7 days
-#my $filter = 13522; # 8 days
+#my $filter = 13303; # 7 days
+my $filter = 13522; # 8 days
 #my $filter = 13600; # 10 days
 #my $filter = 13510; # 2 weeks
 #my $filter = 14101; # 15 days
@@ -21,6 +21,8 @@ my $jiraSearchUrl = "${jiraBaseUrl}/sr/jira.issueviews:searchrequest-xml/${filte
 my $text;
 if (-e "/tmp/SearchRequest-${filter}.xml" ) {
   $text = read_file( "/tmp/SearchRequest-${filter}.xml" );
+} elsif (-e "/tmp/SearchRequest.xml" ) {
+  $text = read_file( "/tmp/SearchRequest.xml" );
 } else {
   # Read our login credentials
   my $creds = {};
