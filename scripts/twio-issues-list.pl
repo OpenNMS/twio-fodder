@@ -23,6 +23,10 @@ if (-e "/tmp/SearchRequest-${filter}.xml" ) {
   $text = read_file( "/tmp/SearchRequest-${filter}.xml" );
 } elsif (-e "/tmp/SearchRequest.xml" ) {
   $text = read_file( "/tmp/SearchRequest.xml" );
+} elsif (-e "$ENV{HOME}/Desktop/SearchRequest.xml" ) {
+  $text = read_file( "$ENV{HOME}/Desktop/SearchRequest.xml" );
+} elsif (-e "$ENV{HOME}/Downloads/SearchRequest.xml" ) {
+  $text = read_file( "$ENV{HOME}/Downloads/SearchRequest.xml" );
 } else {
   # Read our login credentials
   my $creds = {};
