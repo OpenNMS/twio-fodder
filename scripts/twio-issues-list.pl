@@ -1,22 +1,37 @@
 #!/usr/bin/env perl
 
-use Term::ReadKey;
-use LWP::UserAgent;
-use XML::LibXML;
 use File::Slurp;
+use LWP::UserAgent;
+use Term::ReadKey;
+use URI::Escape;
+use XML::LibXML;
 
 # Change this if the Jira URL changes
 my $jiraHost = "issues.opennms.org";
 my $jiraBaseUrl = "https://${jiraHost}";
 
 #my $filter = 13303; # 7 days
-my $filter = 13522; # 8 days
+#my $filter = 13522; # 8 days
 #my $filter = 13600; # 10 days
 #my $filter = 13510; # 2 weeks
 #my $filter = 14101; # 15 days
+my $filter = 18950; # no date bounding
+
+my $start_date = shift(@ARGV);
+my $end_date   = shift(@ARGV);
+
+if (not defined $start_date or $start_date eq "") {
+  print "Start Date: yyyy-mm-dd\rStart Date: ";
+  chomp ($start_date = <STDIN>);
+}
+if (not defined $end_date or $end_date eq "") {
+  print "End Date: yyyy-mm-dd\rEnd Date: ";
+  chomp ($end_date = <STDIN>);
+}
 
 my $jiraLoginUrl = "${jiraBaseUrl}/login.jsp";
-my $jiraSearchUrl = "${jiraBaseUrl}/sr/jira.issueviews:searchrequest-xml/${filter}/SearchRequest-${filter}.xml?tempMax=1000";
+my $jiraSearchText = "project in (NMS, OCE, HELM, IPL, JICMP, JRRD, COMPASS, OIA, JS, PRIS) AND status in (Resolved, Closed, Done) AND resolution in (Fixed, Configuration, Done) AND resolved >= ${start_date} AND resolved < ${end_date} ORDER BY key ASC, fixVersion ASC";
+my $jiraSearchUrl = "${jiraBaseUrl}/sr/jira.issueviews:searchrequest-xml/temp/SearchRequest.xml?tempMax=1000&jql=" . uri_escape($jiraSearchText);
 
 my $text;
 if (-e "/tmp/SearchRequest-${filter}.xml" ) {
@@ -30,7 +45,7 @@ if (-e "/tmp/SearchRequest-${filter}.xml" ) {
 } else {
   # Read our login credentials
   my $creds = {};
-  print "Jira login\n----------\nUsername: ";
+  print "Username: ";
   chomp ($creds->{os_username} = <STDIN>);
   print "Password: ";
   ReadMode('noecho');
