@@ -30,7 +30,7 @@ if (not defined $end_date or $end_date eq "") {
 }
 
 my $jiraLoginUrl = "${jiraBaseUrl}/login.jsp";
-my $jiraSearchText = "project in (NMS, OCE, HELM, IPL, JICMP, JRRD, COMPASS, OIA, JS, PRIS) AND status in (Resolved, Closed, Done) AND resolution in (Fixed, Configuration, Done) AND resolved >= ${start_date} AND resolved < ${end_date} ORDER BY key ASC, fixVersion ASC";
+my $jiraSearchText = "project in (NMS, OCE, HELM, IPL, JICMP, JRRD, COMPASS, OIA, JS, PRIS, HS) AND status in (Resolved, Closed, Done) AND resolution in (Fixed, Configuration, Done) AND resolved >= ${start_date} AND resolved < ${end_date} ORDER BY key ASC, fixVersion ASC";
 my $jiraSearchUrl = "${jiraBaseUrl}/sr/jira.issueviews:searchrequest-xml/temp/SearchRequest.xml?tempMax=1000&jql=" . uri_escape($jiraSearchText);
 
 my $text;
