@@ -1,6 +1,8 @@
 #!/usr/bin/env perl
 
 use File::Slurp;
+use HTTP::Cookies;
+use LWP::Protocol::https;
 use LWP::UserAgent;
 use Term::ReadKey;
 use URI::Escape;
